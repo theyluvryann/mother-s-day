@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Mother's Day Mom ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffd6e7, #ffeef5);
+      overflow-x: hidden;
+      color: #333;
+      text-align: center;
+    }
+
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d63384;
+    }
+
+    p {
+      max-width: 600px;
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #ff85a2;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff5c8a;
+    }
+
+    .flower {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="section">
+  <h1>Happy Mother’s Dayy Mom ❤️</h1>
+  <p>
+    This is just a little gift I made for you ❤️  
+    I hope you enjoy thiss..
+  </p>
+  <button onclick="nextSection()">Next ➜</button>
+</div>
+
+<div class="section" style="display:none;">
+  <h1>Appreciation 🌸</h1>
+  <p>
+    Mom, I honestly don’t say this enough, but I appreciate everything you do for me.  
+    I really appreciate all the time you and I spend together, yes we might not talk as much, but even in the silence I really do enjoy your presence. YES even though I ask you “ why you home so early. “ I do enjoy the presence, ANDDD because I get to annoy you once you arrive home LOLL.  
+    I do wish that we could go out more and create a whole bunch more memories aswell as capture them so that sometime in the future we can all look back at them an reminisce about that day.
+    Besides all of that I hope you enjoy your special day today and remember that I love you and thank you for everything you do for Chloe and I.
+  </p>
+  <button onclick="nextSection()">Next ➜</button>
+</div>
+
+<div class="section" style="display:none;">
+  <h1>Thank You 💐</h1>
+  <p>
+    Thank you for loving me unconditionally.  
+    Thank you for guiding me, supporting me, and believing in me even when I don’t believe in myself.  
+    I am so blessed to call you my mom.
+  </p>
+</div>
+
+<script>
+  let current = 0;
+  const sections = document.querySelectorAll('.section');
+
+  function nextSection() {
+    sections[current].style.display = 'none';
+    current++;
+    if (current < sections.length) {
+      sections[current].style.display = 'flex';
+    }
+  }
+
+  function createFlower() {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerHTML = "🌸";
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+      flower.remove();
+    }, 10000);
+  }
+
+  setInterval(createFlower, 800);
+</script>
+
+</body>
+</html>
